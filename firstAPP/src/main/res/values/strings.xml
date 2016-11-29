@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CoordinatorLayoutDemo</string>
+    <string name="child">This is child</string>
+    <string name="dependency">This is dependency</string>
+</resources>
