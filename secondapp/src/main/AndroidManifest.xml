@@ -15,6 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".FloatingActionButtonActivity">
+        </activity>
+        <activity android:name=".AppBarLayoutActivity">
+        </activity>
     </application>
 
 </manifest>

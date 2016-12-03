@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fj.second.MainActivity">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@mipmap/ic_done"
+        app:backgroundTint="@android:color/holo_blue_light"
+        app:fabSize="normal"
+        app:rippleColor="@android:color/white"/>
+    <!--app:rippleColor浮动操作按钮按下时的涟漪效应-->
+    <!--app:borderWidth设置边框宽度的-->
+    <!--app:elevation海拔高度设置空闲状态的阴影深度(默认值是6 dp)-->
+    <!--app:pressedTranslationZ设置按下状态的阴影深度(默认是12 dp)-->
+</android.support.design.widget.CoordinatorLayout>
