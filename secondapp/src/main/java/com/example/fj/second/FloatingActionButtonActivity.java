@@ -26,7 +26,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
                 // 修改Snackbar的背景颜色
                 // snackbar.getView().setBackgroundColor(getResources().getColor(R.color.colorAccent));
 
-                // 使用工具类，按照不同等级，修改背景颜色
+                // 或者使用工具类，按照不同等级，修改背景颜色
                 ColoredSnackbar.alert(snackbar)
 
                         // 设置右侧取消文字的颜色
