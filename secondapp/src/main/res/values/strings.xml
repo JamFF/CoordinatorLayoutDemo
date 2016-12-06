@@ -4,4 +4,5 @@
     <string name="fab">FloatingActionButton</string>
     <string name="show_toast">toast</string>
     <string name="app_bar">AppBarLayout</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
