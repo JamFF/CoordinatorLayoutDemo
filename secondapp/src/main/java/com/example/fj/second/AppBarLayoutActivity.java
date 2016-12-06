@@ -38,8 +38,6 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
     }
 
     private void initData() {
-        // viewpager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
-
         List<String> mList = new ArrayList<>();
 
         if (mList.size() > 0) {

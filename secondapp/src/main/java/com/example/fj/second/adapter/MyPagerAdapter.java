@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * 描述：
- * 作者：傅健
+ * 作者：sam.fu
  * 创建时间：2016/12/6 17:55
  */
 
@@ -38,6 +38,9 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
         return mList.size();
     }
 
+    /**
+     * 重写与TabLayout配合
+     */
     @Override
     public CharSequence getPageTitle(int position) {
         return mList.get(position);
