@@ -43,6 +43,7 @@ public class MyView extends TextView {
 
             case MotionEvent.ACTION_DOWN:
 
+                // 注意这里要给last赋值，不然开始时移动会跳动
                 x = lastX = (int) event.getRawX();
                 y = lastY = (int) event.getRawY();
                 break;

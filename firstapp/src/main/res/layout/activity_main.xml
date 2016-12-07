@@ -14,8 +14,8 @@
         android:background="@android:color/holo_red_light"
         android:text="@string/child"
         app:layout_behavior="com.example.fj.coordinatorlayout.MyBehavior"/>
-    <!--app:layout_behavior="你的Behavior包含包名的类名"
-    CoordinatorLayout就会反射生成你的Behavior-->
+    <!--app:layout_behavior="你的Behavior包含包名的类名"-->
+    <!--CoordinatorLayout就会反射生成你的Behavior-->
 
     <com.example.fj.coordinatorlayout.MyView
         android:layout_width="100dp"

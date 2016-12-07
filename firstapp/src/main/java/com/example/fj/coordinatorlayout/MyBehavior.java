@@ -19,9 +19,9 @@ public class MyBehavior extends CoordinatorLayout.Behavior<TextView> {
 
     public MyBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
+        // 获取屏幕分辨率
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
         screenWidth = dm.widthPixels;
-
     }
 
     /**
@@ -51,6 +51,13 @@ public class MyBehavior extends CoordinatorLayout.Behavior<TextView> {
         return true;
     }
 
+    /**
+     * 给view设置位置
+     *
+     * @param child 需要改变位置的view
+     * @param x     leftMargin
+     * @param y     topMargin
+     */
     private void setPosition(View child, int x, int y) {
 
         if (child.getLayoutParams() instanceof CoordinatorLayout.LayoutParams) {
@@ -59,7 +66,6 @@ public class MyBehavior extends CoordinatorLayout.Behavior<TextView> {
             params.leftMargin = x;
             params.topMargin = y;
             child.setLayoutParams(params);
-
         }
     }
 }
