@@ -31,6 +31,7 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
 
     private void initView() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // 设置toolbar，注意theme不能使用带有actionbar的样式，否则会报错
         setSupportActionBar(toolbar);
 
         tab = (TabLayout) findViewById(R.id.tab);
@@ -49,8 +50,15 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
         mList.add("Tab 4");
         mList.add("Tab 5");
 
+        // 设置ViewPager的Adapter
         viewpager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), mList));
+        // 关键一行代码，将TabLayout与ViewPager关联
         tab.setupWithViewPager(viewpager);
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 
     @Override
@@ -73,10 +81,5 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
-
     }
 }

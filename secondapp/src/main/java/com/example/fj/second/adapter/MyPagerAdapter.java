@@ -30,6 +30,7 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        // 创建多个ItemFragment实例
         return ItemFragment.newInstance(0);
     }
 
