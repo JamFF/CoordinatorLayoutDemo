@@ -21,4 +21,12 @@
         android:layout_below="@id/bt_fab"
         android:text="@string/app_bar"
         android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/collapsing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_appbar"
+        android:text="@string/collapsing"
+        android:textAllCaps="false"/>
 </RelativeLayout>

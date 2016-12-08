@@ -19,6 +19,8 @@
         <activity
             android:name=".AppBarLayoutActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".CollapsingToolbarLayoutActivity">
+        </activity>
     </application>
 
 </manifest>
