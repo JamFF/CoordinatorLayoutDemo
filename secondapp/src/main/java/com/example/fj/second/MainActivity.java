@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.bt_fab).setOnClickListener(this);
         findViewById(R.id.bt_appbar).setOnClickListener(this);
-        findViewById(R.id.collapsing).setOnClickListener(this);
+        findViewById(R.id.bt_collapsing).setOnClickListener(this);
+        findViewById(R.id.bt_behavior).setOnClickListener(this);
     }
 
     @Override
@@ -32,6 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.collapsing:
                 startActivity(new Intent(this, CollapsingToolbarLayoutActivity.class));
+                break;
+
+            case R.id.bt_behavior:
+                startActivity(new Intent(this, MyBehaviorActivity.class));
                 break;
         }
     }

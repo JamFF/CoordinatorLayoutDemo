@@ -21,6 +21,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".CollapsingToolbarLayoutActivity">
         </activity>
+        <activity android:name=".MyBehaviorActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -5,4 +5,5 @@
     <string name="show_toast">toast</string>
     <string name="app_bar">AppBarLayout</string>
     <string name="collapsing">CollapsingToolbarLayout</string>
+    <string name="behavior">MyBehavior</string>
 </resources>

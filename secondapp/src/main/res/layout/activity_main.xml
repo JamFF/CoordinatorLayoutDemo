@@ -23,10 +23,18 @@
         android:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/collapsing"
+        android:id="@+id/bt_collapsing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/bt_appbar"
         android:text="@string/collapsing"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/bt_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_collapsing"
+        android:text="@string/behavior"
         android:textAllCaps="false"/>
 </RelativeLayout>
