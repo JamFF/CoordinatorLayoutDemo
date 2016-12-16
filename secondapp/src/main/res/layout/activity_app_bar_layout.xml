@@ -14,6 +14,9 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+        <!--scroll: 所有想滚动出屏幕的view都需要设置这个flag，
+        没有设置这个flag的view将被固定在屏幕顶部。例如，TabLayout 没有设置这个值，将会停留在屏幕顶部-->
+        <!--enterAlways: 设置这个flag时，向下的滚动都会导致该view变为可见，启用快速“返回模式”-->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"

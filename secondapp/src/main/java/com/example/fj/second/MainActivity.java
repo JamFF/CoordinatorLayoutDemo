@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, AppBarLayoutActivity.class));
                 break;
 
-            case R.id.collapsing:
+            case R.id.bt_collapsing:
                 startActivity(new Intent(this, CollapsingToolbarLayoutActivity.class));
                 break;
 
