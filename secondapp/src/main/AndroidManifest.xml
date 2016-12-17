@@ -15,14 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".FloatingActionButtonActivity"/>
+        <activity
+            android:name=".FloatingActionButtonActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".AppBarLayoutActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".CollapsingToolbarLayoutActivity">
-        </activity>
-        <activity android:name=".MyBehaviorActivity">
-        </activity>
+        <activity
+            android:name=".CollapsingToolbarLayoutActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".MyBehaviorActivity"/>
     </application>
 
 </manifest>

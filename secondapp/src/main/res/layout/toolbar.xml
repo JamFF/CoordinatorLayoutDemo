@@ -8,7 +8,7 @@
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
     app:layout_scrollFlags="scroll|enterAlways"
-    app:logo="@mipmap/ic_launcher"
+    app:logo="@mipmap/ic_logo"
     app:popupTheme="@style/AppTheme.PopupOverlay"
     app:subtitle="@string/tool_bar_sub_title"
     app:title="@string/app_bar"

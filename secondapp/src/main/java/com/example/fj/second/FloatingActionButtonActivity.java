@@ -36,7 +36,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         // APP Logo
-        toolbar.setLogo(R.mipmap.ic_launcher);
+        toolbar.setLogo(R.mipmap.ic_logo);
 
         // Title
         toolbar.setTitle(getString(R.string.tool_bar_title));
