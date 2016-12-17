@@ -2,6 +2,22 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.example.fj.myapplication.MainActivity">
+
+    <!--orderInCategory是actionbar里每个item的优先级，值越大优先级越低，actionbar地方不够就会放到overflow中-->
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:orderInCategory="80"
+        android:title="@string/action_edit"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:orderInCategory="90"
+        android:title="@string/action_share"
+        app:showAsAction="ifRoom"/>
+
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

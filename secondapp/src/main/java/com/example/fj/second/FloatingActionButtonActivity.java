@@ -75,6 +75,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
             }
         });
 
+        // 返回键的点击事件还可以onOptionsItemSelected中写，参照AppBarLayoutActivity
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

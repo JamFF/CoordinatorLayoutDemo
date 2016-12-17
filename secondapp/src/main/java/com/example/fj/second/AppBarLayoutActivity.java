@@ -3,10 +3,12 @@ package com.example.fj.second;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.fj.second.adapter.MyPagerAdapter;
 import com.example.fj.second.dummy.DummyContent;
@@ -30,9 +32,49 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
     }
 
     private void initView() {
+        initToolbar();
+        initTabLayout();
+    }
+
+    private void initToolbar() {
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         // 设置toolbar，注意theme不能使用带有actionbar的样式，否则会报错
         setSupportActionBar(toolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar != null) {
+            // 4.0以上Navigation默认false
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                String msg = null;
+                switch (item.getItemId()) {
+                    case R.id.action_edit:
+                        msg = "Click edit";
+                        break;
+                    case R.id.action_share:
+                        msg = "Click share";
+                        break;
+                    case R.id.action_settings:
+                        msg = "Click setting";
+                        break;
+                }
+
+                if (msg != null) {
+                    Toast.makeText(AppBarLayoutActivity.this, msg, Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
+    }
+
+    private void initTabLayout() {
 
         tab = (TabLayout) findViewById(R.id.tab);
         viewpager = (ViewPager) findViewById(R.id.viewpager);
@@ -77,6 +119,12 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        // Toolbar上返回键的点击事件，也可以单独设置，
+        if (id == android.R.id.home) {
+            onBackPressed();
             return true;
         }
 

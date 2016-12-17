@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.fj.second.AppBarLayoutActivity">
+
+    <!--android:fitsSystemWindows="true"时 toolbar 隐藏时 toolbar 会滑动到 StatusBar 下面-->
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -14,16 +16,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <!--scroll: 所有想滚动出屏幕的view都需要设置这个flag，
-        没有设置这个flag的view将被固定在屏幕顶部。例如，TabLayout 没有设置这个值，将会停留在屏幕顶部-->
-        <!--enterAlways: 设置这个flag时，向下的滚动都会导致该view变为可见，启用快速“返回模式”-->
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+        <include layout="@layout/toolbar"/>
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tab"

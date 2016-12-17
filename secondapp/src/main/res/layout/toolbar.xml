@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:logo="@mipmap/ic_launcher"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
+    app:subtitle="@string/tool_bar_sub_title"
+    app:title="@string/app_bar"
+    tools:showIn="@layout/activity_app_bar_layout"/>
+
+    <!--scroll: 所有想滚动出屏幕的view都需要设置这个flag，
+            没有设置这个flag的view将被固定在屏幕顶部。例如，TabLayout 没有设置这个值，将会停留在屏幕顶部-->
+    <!--enterAlways: 设置这个flag时，向下的滚动都会导致该view变为可见，启用快速“返回模式”-->
