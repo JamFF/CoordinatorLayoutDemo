@@ -12,6 +12,7 @@
     app:popupTheme="@style/AppTheme.PopupOverlay"
     app:subtitle="@string/tool_bar_sub_title"
     app:title="@string/app_bar"
+    app:titleMarginStart="30dp"
     tools:showIn="@layout/activity_app_bar_layout"/>
 
     <!--scroll: 所有想滚动出屏幕的view都需要设置这个flag，

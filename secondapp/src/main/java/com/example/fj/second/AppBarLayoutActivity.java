@@ -55,14 +55,12 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
             public boolean onMenuItemClick(MenuItem item) {
                 String msg = null;
                 switch (item.getItemId()) {
-                    case R.id.action_edit:
-                        msg = "Click edit";
-                        break;
-                    case R.id.action_share:
-                        msg = "Click share";
-                        break;
+
                     case R.id.action_settings:
                         msg = "Click setting";
+                        break;
+
+                    default:
                         break;
                 }
 
