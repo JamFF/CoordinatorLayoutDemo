@@ -11,4 +11,4 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context="com.example.fj.second.fragment.ItemFragment"
-    tools:listitem="@layout/fragment_item"/>
+    tools:listitem="@layout/fragment_item_linear"/>

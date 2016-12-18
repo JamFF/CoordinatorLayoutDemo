@@ -3,6 +3,7 @@ package com.example.fj.second.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.widget.LinearLayout;
 
 import com.example.fj.second.fragment.ItemFragment;
 
@@ -31,7 +32,50 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         // 创建多个ItemFragment实例
-        return ItemFragment.newInstance(0);
+
+        switch (position) {
+
+            case 0:
+                return ItemFragment.newInstance(1, LinearLayout.VERTICAL, false, false);
+
+            case 1:
+                return ItemFragment.newInstance(1, LinearLayout.VERTICAL, true, false);
+
+            case 2:
+                return ItemFragment.newInstance(1, LinearLayout.HORIZONTAL, false, false);
+
+            case 3:
+                return ItemFragment.newInstance(1, LinearLayout.HORIZONTAL, true, false);
+
+            case 4:
+                return ItemFragment.newInstance(3, LinearLayout.VERTICAL, false, false);
+
+            case 5:
+                return ItemFragment.newInstance(3, LinearLayout.VERTICAL, true, false);
+
+            case 6:
+                return ItemFragment.newInstance(3, LinearLayout.HORIZONTAL, false, false);
+
+            case 7:
+                return ItemFragment.newInstance(3, LinearLayout.HORIZONTAL, true, false);
+
+            case 8:
+                return ItemFragment.newInstance(3, LinearLayout.VERTICAL, false, true);
+
+            case 9:
+                return ItemFragment.newInstance(3, LinearLayout.VERTICAL, true, true);
+
+            case 10:
+                return ItemFragment.newInstance(3, LinearLayout.HORIZONTAL, false, true);
+
+            case 11:
+                return ItemFragment.newInstance(3, LinearLayout.HORIZONTAL, true, true);
+
+            default:
+                break;
+        }
+        // 替他默认返回
+        return ItemFragment.newInstance(1, LinearLayout.VERTICAL, false, false);
     }
 
     @Override

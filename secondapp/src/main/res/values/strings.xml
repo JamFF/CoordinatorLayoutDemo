@@ -13,4 +13,8 @@
     <string name="behavior">MyBehavior</string>
     <string name="cardView">CardView</string>
     <string name="card_string">First thing to do include Android Design Support Library in out project in out project is to add a line of dependency code in app\'s build.gradle file.</string>
+    <string name="action_list">List显示</string>
+    <string name="action_grid">Grid显示</string>
+    <string name="action_staggered">瀑布流显示</string>
+    <string name="desc">展示图片</string>
 </resources>

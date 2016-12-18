@@ -6,27 +6,49 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.fj.second.R;
 import com.example.fj.second.adapter.MyItemRecyclerViewAdapter;
-import com.example.fj.second.dummy.DummyContent;
-import com.example.fj.second.dummy.DummyContent.DummyItem;
+import com.example.fj.second.model.DATAS;
+import com.example.fj.second.model.DataBean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
+ * 描述：RecyclerView的Fragment
+ * <p>
+ * 对应的Activity必须实现{@link OnListFragmentInteractionListener}这个接口
+ * 作者：傅健
+ * 创建时间：2016/12/18 11:22
  */
 public class ItemFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+
+    private static final String ARG_ORIENTATION = "orientation";
+
+    private static final String ARG_REVERSE_LAYOUT = "reverse_layout";
+
+    private static final String ARG_STAGGERED = "staggered";
+
+    // 列数
     private int mColumnCount = 1;
+
+    // 滑动方向默认垂直
+    private int mOrientation = LinearLayout.VERTICAL;
+
+    // 展示方向默认升序
+    private boolean mReverseLayout = false;
+
+    // 是否是瀑布流
+    private boolean mStaggered = false;
+
     private OnListFragmentInteractionListener mListener;
 
     /**
@@ -36,12 +58,21 @@ public class ItemFragment extends Fragment {
     public ItemFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static ItemFragment newInstance(int columnCount) {
+    /**
+     * 传入RecyclerView的LayoutManager参数
+     *
+     * @param columnCount   列数
+     * @param orientation   LinearLayout.VERTICAL垂直滑动 LinearLayout.HORIZONTAL水平滑动
+     * @param reverseLayout false:升序 true:降序
+     * @param staggered     false:非瀑布流 true:瀑布流
+     */
+    public static ItemFragment newInstance(int columnCount, int orientation, boolean reverseLayout, boolean staggered) {
         ItemFragment fragment = new ItemFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
+        args.putInt(ARG_ORIENTATION, orientation);
+        args.putBoolean(ARG_REVERSE_LAYOUT, reverseLayout);
+        args.putBoolean(ARG_STAGGERED, staggered);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,6 +83,9 @@ public class ItemFragment extends Fragment {
 
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+            mOrientation = getArguments().getInt(ARG_ORIENTATION);
+            mReverseLayout = getArguments().getBoolean(ARG_REVERSE_LAYOUT, false);
+            mStaggered = getArguments().getBoolean(ARG_STAGGERED, false);
         }
     }
 
@@ -64,12 +98,49 @@ public class ItemFragment extends Fragment {
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+
+            List<DataBean> beanList = new ArrayList<>();
+
+            if (mOrientation != LinearLayout.VERTICAL && mOrientation != LinearLayout.HORIZONTAL) {
+                mOrientation = LinearLayout.VERTICAL;
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            if (mColumnCount <= 1) {
+                mColumnCount = 1;
+                recyclerView.setLayoutManager(new LinearLayoutManager(context, mOrientation, mReverseLayout));
+
+                for (int i = 0; i < DATAS.ICONS.length; i++) {
+                    DataBean bean = new DataBean();
+                    bean.setIcon(DATAS.ICONS[i]);
+                    bean.setName("图片-" + i);
+                    beanList.add(bean);
+                }
+
+            } else {
+                if (mStaggered) {
+                    StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(mColumnCount, mOrientation);
+                    layoutManager.setReverseLayout(mReverseLayout);
+                    recyclerView.setLayoutManager(layoutManager);
+
+                    for (int i = 0; i < DATAS.PICS.length; i++) {
+                        DataBean bean = new DataBean();
+                        bean.setIcon(DATAS.PICS[i]);
+                        bean.setName("图片-" + i);
+                        beanList.add(bean);
+                    }
+                } else {
+                    recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount, mOrientation, mReverseLayout));
+
+                    for (int i = 0; i < DATAS.ICONS.length; i++) {
+                        DataBean bean = new DataBean();
+                        bean.setIcon(DATAS.ICONS[i]);
+                        bean.setName("图片-" + i);
+                        beanList.add(bean);
+                    }
+                }
+            }
+
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(beanList, mColumnCount, mListener));
         }
         return view;
     }
@@ -104,6 +175,6 @@ public class ItemFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(DataBean item);
     }
 }
