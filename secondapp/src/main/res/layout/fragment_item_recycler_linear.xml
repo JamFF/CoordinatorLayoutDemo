@@ -9,10 +9,12 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/card_margin"
+        android:foreground="?attr/selectableItemBackground"
         app:cardElevation="4dp">
-        <!--不加android:layout_margin，CardView全部紧凑在一起，看不到效果，而且必须加载CardView上，不能加在外层RelativeLayout-->
+        <!--从SDK21开始不加android:layout_margin，CardView全部紧凑在一起，看不到效果，而且必须加载CardView上，不能加在外层RelativeLayout-->
         <!--cardview:cardElevation增加CardView的海拔高度，如果使用xmlns:app的命名空间要使用app:cardElevation-->
+        <!--android:foreground="?attr/selectableItemBackground"点击效果-->
 
         <RelativeLayout
             android:layout_width="match_parent"

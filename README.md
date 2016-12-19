@@ -84,7 +84,27 @@ CoordinatorLayout控件的使用
 
 * CardView使用失效：需要在Cardview的标签中添加layout_margin，不然不能显示出来海拔效果，在CardView的外层使用layout_margin也不会显示
 
+* 使用上面的修改，会在SDK低于21的手机上，出现浪费空间问题，参照[关于使用 CardView 开发过程中要注意的细节](http://www.open-open.com/lib/view/open1445759019585.html)进行修改
+
+> 我们需要自定义一个 dimen 作为 CardView 的 Margin 值：
+
+> 1.创建 /res/value 和 /res/value-v21 资源文件夹于项目对应 Module 目录下，前者放置旧版本/通用的资源文件（了解的可以跳过），后者放置 21 及更高 SDK 版本的资源文件。
+
+> 2.在 value 内的 dimen.xml 创建一个 Dimension （<dimen> 属性），随便命个名（如 xxx_card_margin）并填入数值 0dp。
+
+> 3.接着在 value-v21 文件夹内的 dimen.xml 创建名字相同的 Dimension，并填入你期望的预留边距（一般和 CardElevation 阴影大小相同）
+
+> 4.最后，在你布局中的 CardView 中设置android:layout_margin="@dimen/xxx_card_margin"
+
+> 这样依赖就解决了低版本中边距过大或者视觉效果不统一的问题了。
+
 * 使用app:cardElevation增加CardView的海拔高度，需要引入命名空间
+
+* CardView点击效果
+
+> 如果你是用了 AppCompat v7 支持库：
+
+> 那么你可以直接给 CardView 加上 android:foreground="?attr/selectableItemBackground" 这个属性会在 Lollipop 上自动加上 > Ripple 效果，在旧版本则是一个变深/变亮的效果。
 
 ##参考
 
