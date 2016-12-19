@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+    <!--xmlns:cardview="http://schemas.android.com/apk/res-auto"和xmlns:app="http://schemas.android.com/apk/res-auto"效果一样-->
 
     <android.support.v7.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        cardview:cardElevation="10dp">
+        android:layout_margin="8dp"
+        app:cardElevation="4dp">
+        <!--不加android:layout_margin，CardView全部紧凑在一起，看不到效果，而且必须加载CardView上，不能加在外层RelativeLayout-->
+        <!--cardview:cardElevation增加CardView的海拔高度，如果使用xmlns:app的命名空间要使用app:cardElevation-->
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="6dp">
 
             <ImageView
                 android:id="@+id/item_list_iv_icon"

@@ -10,5 +10,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_app_bar_layout"/>
 
+    <!--"@string/appbar_scrolling_view_behavior"系统的-->
+
     <!--不加app:layout_behavior="@string/appbar_scrolling_view_behavior"
     会导致RecyclerView在Toolbar下面，被TabLayout遮盖-->

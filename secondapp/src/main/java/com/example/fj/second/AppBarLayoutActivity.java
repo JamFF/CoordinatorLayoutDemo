@@ -25,8 +25,6 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
 
     private List<String> mList = new ArrayList<>();
 
-    private MyPagerAdapter mAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,8 +115,7 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
         mList.add("瀑布流水平反向");
 
         // 设置ViewPager的Adapter
-        mAdapter = new MyPagerAdapter(getSupportFragmentManager(), mList);
-        viewpager.setAdapter(mAdapter);
+        viewpager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), mList));
         // 关键一行代码，将TabLayout与ViewPager关联
         tab.setupWithViewPager(viewpager);
     }
