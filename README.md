@@ -82,7 +82,7 @@ CoordinatorLayout控件的使用
 
 ###注意点
 
-* 使用CardView时需要在Cardview的标签中添加layout_margin，不然不能显示出来海拔效果，在CardView的外层使用layout_margin也不会显示
+* CardView使用失效：需要在Cardview的标签中添加layout_margin，不然不能显示出来海拔效果，在CardView的外层使用layout_margin也不会显示
 
 * 使用app:cardElevation增加CardView的海拔高度，需要引入命名空间
 
