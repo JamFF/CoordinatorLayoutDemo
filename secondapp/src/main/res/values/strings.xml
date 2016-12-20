@@ -17,4 +17,5 @@
     <string name="action_grid">Grid显示</string>
     <string name="action_staggered">瀑布流显示</string>
     <string name="desc">展示图片</string>
+    <string name="undo">undo</string>
 </resources>
