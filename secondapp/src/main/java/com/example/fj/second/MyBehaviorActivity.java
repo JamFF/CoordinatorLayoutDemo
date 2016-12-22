@@ -25,7 +25,7 @@ public class MyBehaviorActivity extends AppCompatActivity {
                         .setAction(getString(R.string.undo), new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-
+                                Toast.makeText(MyBehaviorActivity.this, "关闭", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .show();
