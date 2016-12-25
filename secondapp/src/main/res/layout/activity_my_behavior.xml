@@ -15,6 +15,6 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
         android:src="@mipmap/ic_done"
-        app:layout_behavior="com.example.fj.second.RotateBehavior"/>
+        app:layout_behavior="com.example.fj.second.widget.RotateBehavior"/>
 
 </android.support.design.widget.CoordinatorLayout>

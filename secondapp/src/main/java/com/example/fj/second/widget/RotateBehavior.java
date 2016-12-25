@@ -1,4 +1,4 @@
-package com.example.fj.second;
+package com.example.fj.second.widget;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
