@@ -82,7 +82,9 @@ CoordinatorLayout控件的使用
 
 ###注意点
 
-* CardView使用失效：需要在Cardview的标签中添加layout_margin，不然不能显示出来海拔效果，在CardView的外层使用layout_margin也不会显示
+* CardView使用失效：需要在CardView的标签中添加layout_margin，不然不能显示出来海拔效果，在CardView的外层使用layout_margin也不会显示
+
+![alt text](https://github.com/ffuujian/CoordinatorLayoutDemo/tree/master/art/CardView.png)
 
 * 使用上面的修改，会在SDK低于21的手机上，出现浪费空间问题，参照[关于使用 CardView 开发过程中要注意的细节](http://www.open-open.com/lib/view/open1445759019585.html)进行修改
 
@@ -106,7 +108,34 @@ CoordinatorLayout控件的使用
 
 * 使用app:cardElevation增加CardView的海拔高度，需要引入命名空间
 
-##参考
+##CollapsingToolbarLayout
+
+###注意点
+
+* Collapsing title：ToolBar的标题，当CollapsingToolbarLayout全屏没有折叠时，title显示的是大字体，在折叠的过程中，title不断变小到一定大小的效果。你可以调用setTitle(CharSequence)方法设置title
+
+* Content scrim：ToolBar被折叠到顶部固定时候的背景，你可以调用setContentScrim(Drawable)方法改变背景或者 在属性中使用 app:contentScrim="?attr/colorPrimary"来改变背景
+
+* Status bar scrim：状态栏的背景，调用方法setStatusBarScrim(Drawable)。还没研究明白，不过这个只能在Android5.0以上系统有效果
+
+* Parallax scrolling children：CollapsingToolbarLayout滑动时，子视图的视觉差，可以通过属性app:layout_collapseParallaxMultiplier="0.6"改变
+
+* CollapseMode ：子视图的折叠模式，有两种"pin"：固定模式，在折叠的时候最后固定在顶端；"parallax"：视差模式，在折叠的时候会有个视差折叠的效果，通常和layout_collapseParallaxMultiplier(设置视差因子)搭配使用
+
+使用`app:layout_collapseMode="pin"`
+
+![alt text](https://github.com/ffuujian/CoordinatorLayoutDemo/tree/master/art/collapseMode.png)
+
+不使用`app:layout_collapseMode="pin"`
+
+![alt text](https://github.com/ffuujian/CoordinatorLayoutDemo/tree/master/art/no_collapseMode.png)
+
+* Toolbar 的高度layout_height必须固定，不能 "wrap_content"，否则Toolbar不会滑动，也没有折叠效果
+
+* 为了能让FloatingActionButton也能折叠且消失出现，我们必须给FAB设置锚点属性`app:layout_anchor="@id/appbar"`意思是FAB浮动按钮显示在哪个布局区域
+且设置当前锚点的位置`app:layout_anchorGravity="bottom|end|right"`意思FAB浮动按钮在这个布局区域的具体位置。两个属性共同作用才是的FAB 浮动按钮也能折叠消失，出现
+
+* 给需要有折叠效果的组件设置 layout_collapseMode属性
 
 firstapp:
 
@@ -119,3 +148,5 @@ secondapp:
 [android CoordinatorLayout使用](http://blog.csdn.net/xyz_lmn/article/details/48055919)
 
 [玩转AppBarLayout，更酷炫的顶部栏](http://www.jianshu.com/p/d159f0176576)
+
+[Android M新控件之AppBarLayout，NavigationView，CoordinatorLayout，CollapsingToolbarLayout的使用](http://blog.csdn.net/feiduclear_up/article/details/46514791)
