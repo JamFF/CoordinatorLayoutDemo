@@ -44,8 +44,8 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
         // Sub Title
         toolbar.setSubtitle(getString(R.string.tool_bar_sub_title));
 
-        // 最左侧Navigation，这里设置之后不需要再getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // 参照CollapsingToolbarLayoutActivity
+        // 最左侧Navigation，在这里设置图片后，不需要再getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // 如果在布局中设置了图片，参照CollapsingToolbarLayoutActivity
         toolbar.setNavigationIcon(R.mipmap.ic_return);
 
         // 上面这些设置均可在布局文件中设置
