@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.fj.second.AppBarLayoutActivity">
-
     <!--android:fitsSystemWindows="true"时 toolbar 隐藏时 toolbar 会滑动到 StatusBar 下面-->
 
     <android.support.design.widget.AppBarLayout
@@ -23,6 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabMode="scrollable"/>
+        <!--当ViewPager过多展示不开，需要滚动时设置app:tabMode="scrollable"-->
+        <!--否则默认不需要设置，默认为app:tabMode="fixed"，ViewPager平分宽度-->
 
     </android.support.design.widget.AppBarLayout>
 
