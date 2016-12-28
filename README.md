@@ -5,9 +5,9 @@ CoordinatorLayout控件的使用
 
 ###注意点
 
-发现TabLayout遮挡了ViewPager，ViewPager在Toolbar的下面
+发现TabLayout遮挡了下面的ViewPager，ViewPager没有在TabLayout下方，而在Toolbar的下面
 
-通过添加`app:layout_behavior="@string/appbar_scrolling_view_behavior"`修改
+在ViewPager内添加`app:layout_behavior="@string/appbar_scrolling_view_behavior"`得到解决
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<android.support.v4.view.ViewPager
@@ -25,6 +25,8 @@ CoordinatorLayout控件的使用
 	
 	    <!--不加app:layout_behavior="@string/appbar_scrolling_view_behavior"
 	    会导致RecyclerView在Toolbar下面，被TabLayout遮盖-->
+
+可以理解为在最外层CoordinatorLayout控件内，寻找带有`layout_behavior`属性的子控件，作为CoordinatorLayout.Behavior
 
 ##CardView
 
@@ -138,6 +140,8 @@ CoordinatorLayout控件的使用
 * 给需要有折叠效果的组件设置 layout_collapseMode属性
 
 firstapp:
+
+[关于CoordinatorLayout与Behavior的一点分析](http://www.jianshu.com/p/a506ee4afecb)
 
 [CoordinatorLayout的使用如此简单](http://www.jianshu.com/p/72d45d1f7d55)
 
