@@ -29,7 +29,8 @@ public class MyBehavior extends CoordinatorLayout.Behavior<TextView> {
      */
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, TextView child, View dependency) {
-        //如果dependency是MyView的实例，说明它就是我们所需要的Dependency
+        // child是设置这个MyBehavior的View
+        // 如果dependency是MyView的实例，说明它就是我们所需要的Dependency
         return dependency instanceof MyView;
     }
 

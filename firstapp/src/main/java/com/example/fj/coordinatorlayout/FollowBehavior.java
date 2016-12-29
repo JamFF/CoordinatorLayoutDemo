@@ -30,13 +30,15 @@ public class FollowBehavior extends CoordinatorLayout.Behavior {
     }
 
     @Override
-    public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
-        child.setY(dependency.getY() + dependency.getHeight());
-        return true;
+    public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
+        // child是设置这个FollowBehavior的View
+        return dependency.getId() == targetId;
+        // return dependency instanceof com.example.fj.coordinatorlayout.View;
     }
 
     @Override
-    public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
-        return dependency.getId() == targetId;
+    public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
+        child.setY(dependency.getY() + dependency.getHeight());
+        return true;
     }
 }
