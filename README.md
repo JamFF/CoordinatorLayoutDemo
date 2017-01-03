@@ -28,6 +28,8 @@ CoordinatorLayout控件的使用
 
 可以理解为在最外层CoordinatorLayout控件内，寻找带有`layout_behavior`属性的子控件，作为CoordinatorLayout.Behavior
 
+没有找到`layout_behavior`属性的子控件，CoordinatorLayout就成为普通的FrameLayout了
+
 ##CardView
 
 ###步骤
