@@ -7,6 +7,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.fj.coordinatorlayout.widget.MyView;
+
 /**
  * 描述：
  * 作者：sam.fu

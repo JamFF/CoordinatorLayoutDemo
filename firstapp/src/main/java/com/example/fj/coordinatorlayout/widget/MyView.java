@@ -1,30 +1,38 @@
-package com.example.fj.coordinatorlayout;
-
+package com.example.fj.coordinatorlayout.widget;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.widget.TextView;
 
 /**
  * 描述：
- * 作者：傅健
- * 创建时间：2016/12/28 17:43
+ * 作者：sam.fu
+ * 创建时间：2016/11/29 23:01
  */
 
-public class View extends android.view.View {
+public class MyView extends TextView {
 
-    private int y, lastY;
+    private static final String TAG = "MyView";
 
-    public View(Context context) {
+    int x, y, lastX, lastY;
+
+    /**
+     * 代码创建的构造方法
+     */
+    public MyView(Context context) {
         this(context, null);
     }
 
-    public View(Context context, AttributeSet attrs) {
+    /**
+     * xml布局创建的构造方法
+     */
+    public MyView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public View(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MyView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -34,19 +42,25 @@ public class View extends android.view.View {
         switch (event.getAction()) {
 
             case MotionEvent.ACTION_DOWN:
+
+                // 注意这里要给last赋值，不然开始时移动会跳动
+                lastX = (int) event.getRawX();
                 lastY = (int) event.getRawY();
                 break;
 
             case MotionEvent.ACTION_MOVE:
+
+                x = (int) event.getRawX();
                 y = (int) event.getRawY();
 
                 // 代码中获取margin的LayoutParams，也可以使用CoordinatorLayout.MarginLayoutParams
                 if (getLayoutParams() instanceof CoordinatorLayout.LayoutParams) {
                     CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) getLayoutParams();
+                    params.leftMargin = params.leftMargin + x - lastX;
                     params.topMargin = params.topMargin + y - lastY;
                     setLayoutParams(params);
                 }
-
+                lastX = x;
                 lastY = y;
                 break;
 
@@ -57,6 +71,7 @@ public class View extends android.view.View {
                 break;
         }
 
+        // 消费事件
         return true;
     }
 }

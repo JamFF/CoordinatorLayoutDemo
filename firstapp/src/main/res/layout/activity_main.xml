@@ -21,4 +21,12 @@
         android:layout_below="@id/bt_first"
         android:text="@string/second"
         android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/bt_typed_array"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_second"
+        android:text="@string/typed_array"
+        android:textAllCaps="false"/>
 </RelativeLayout>

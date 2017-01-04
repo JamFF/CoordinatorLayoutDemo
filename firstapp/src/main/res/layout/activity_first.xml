@@ -6,7 +6,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fj.coordinatorlayout.FirstActivity">
+    tools:context="com.example.fj.coordinatorlayout.FirstCoordinatorLayoutActivity">
 
     <TextView
         android:layout_width="100dp"
@@ -17,7 +17,7 @@
     <!--app:layout_behavior="你的Behavior包含包名的类名"-->
     <!--CoordinatorLayout就会反射生成你的Behavior-->
 
-    <com.example.fj.coordinatorlayout.MyView
+    <com.example.fj.coordinatorlayout.widget.MyView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@android:color/darker_gray"

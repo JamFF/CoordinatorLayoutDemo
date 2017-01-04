@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.example.fj.coordinatorlayout.SecondActivity">
+    tools:context="com.example.fj.coordinatorlayout.SecondCoordinatorLayoutActivity">
 
-    <com.example.fj.coordinatorlayout.View
+    <com.example.fj.coordinatorlayout.widget.View
         android:id="@+id/first"
         android:layout_width="match_parent"
         android:layout_height="100dp"

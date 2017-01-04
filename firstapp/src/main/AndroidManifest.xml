@@ -15,9 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".FirstActivity">
+        <activity android:name=".FirstCoordinatorLayoutActivity">
         </activity>
-        <activity android:name=".SecondActivity">
+        <activity android:name=".SecondCoordinatorLayoutActivity">
+        </activity>
+        <activity android:name=".TypedArrayActivity">
         </activity>
     </application>
 

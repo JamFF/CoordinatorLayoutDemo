@@ -18,17 +18,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initView() {
         findViewById(R.id.bt_first).setOnClickListener(this);
         findViewById(R.id.bt_second).setOnClickListener(this);
+        findViewById(R.id.bt_typed_array).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_first:
-                startActivity(new Intent(this, FirstActivity.class));
+                startActivity(new Intent(this, FirstCoordinatorLayoutActivity.class));
                 break;
 
             case R.id.bt_second:
-                startActivity(new Intent(this, SecondActivity.class));
+                startActivity(new Intent(this, SecondCoordinatorLayoutActivity.class));
+                break;
+
+            case R.id.bt_typed_array:
+                startActivity(new Intent(this, TypedArrayActivity.class));
                 break;
 
             default:

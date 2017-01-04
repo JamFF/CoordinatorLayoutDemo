@@ -4,4 +4,5 @@
     <string name="dependency">This is dependency</string>
     <string name="first">First</string>
     <string name="second">Second</string>
+    <string name="typed_array">TypedArray</string>
 </resources>

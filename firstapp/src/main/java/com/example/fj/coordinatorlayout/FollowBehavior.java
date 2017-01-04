@@ -33,7 +33,7 @@ public class FollowBehavior extends CoordinatorLayout.Behavior {
     public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
         // child是设置这个FollowBehavior的View
         return dependency.getId() == targetId;
-        // return dependency instanceof com.example.fj.coordinatorlayout.View;
+        // return dependency instanceof com.example.fj.coordinatorlayout.widget.View;
     }
 
     @Override
