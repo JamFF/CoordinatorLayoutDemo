@@ -134,12 +134,12 @@ CoordinatorLayout控件的使用
 
 ![alt text](https://github.com/ffuujian/CoordinatorLayoutDemo/blob/master/art/no_collapseMode.png)
 
-* Toolbar 的高度layout_height必须固定，不能 "wrap_content"，否则Toolbar不会滑动，也没有折叠效果
+* Toolbar的高度`layout_height`必须固定，不能`"wrap_content"`，否则Toolbar不会滑动，也没有折叠效果
 
 * 为了能让FloatingActionButton也能折叠且消失出现，我们必须给FAB设置锚点属性`app:layout_anchor="@id/appbar"`意思是FAB浮动按钮显示在哪个布局区域
 且设置当前锚点的位置`app:layout_anchorGravity="bottom|end|right"`意思FAB浮动按钮在这个布局区域的具体位置。两个属性共同作用才是的FAB 浮动按钮也能折叠消失，出现
 
-* 给需要有折叠效果的组件设置 layout_collapseMode属性
+* 给需要有折叠效果的组件设置`layout_collapseMode`属性
 
 firstapp:
 
