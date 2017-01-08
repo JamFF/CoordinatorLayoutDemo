@@ -100,7 +100,7 @@ CoordinatorLayout控件的使用
 > 
 > 3.接着在 value-v21 文件夹内的 dimen.xml 创建名字相同的 Dimension，并填入你期望的预留边距（一般和 CardElevation 阴影大小相同）
 > 
-> 4.最后，在你布局中的 CardView 中设置android:layout_margin="@dimen/xxx_card_margin"
+> 4.最后，在你布局中的 CardView 中设置`android:layout_margin="@dimen/xxx_card_margin"`
 > 
 > 这样依赖就解决了低版本中边距过大或者视觉效果不统一的问题了。
 
