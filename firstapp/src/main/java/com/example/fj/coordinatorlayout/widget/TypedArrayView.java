@@ -79,6 +79,7 @@ public class TypedArrayView extends android.view.View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         Log.d(TAG, "onMeasure: ");
+
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSpec = MeasureSpec.getSize(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
@@ -87,8 +88,17 @@ public class TypedArrayView extends android.view.View {
         int width;
         int height;
 
-        //宽度
+        // 宽度
         if (widthMode == MeasureSpec.EXACTLY) {
+
+            // MeasureSpec.EXACTLY是精确尺寸，当我们将控件的layout_width或layout_height指定为具体数值时如android:layout_width="50dip"，
+            // 或者为FILL_PARENT是，都是控件大小已经确定的情况，都是精确尺寸。
+
+            // MeasureSpec.AT_MOST是最大尺寸，当控件的layout_width或layout_height指定为WRAP_CONTENT时，控件大小一般随着控件的子空间或内容进行变化，
+            // 此时控件尺寸只要不超过父控件允许的最大尺寸即可。因此，此时的mode是AT_MOST，size给出了父控件允许的最大尺寸。
+
+            // MeasureSpec.UNSPECIFIED是未指定尺寸，这种情况不多，一般都是父控件是AdapterView，通过measure方法传入的模式。
+
             width = widthSpec;
         } else {
             mPaint.setTextSize(mTextSize);
@@ -96,7 +106,8 @@ public class TypedArrayView extends android.view.View {
             float _TextWidth = mBound.width();
             width = (int) (getPaddingLeft() + _TextWidth + getPaddingRight());
         }
-        //高度
+
+        // 高度
         if (heightMode == MeasureSpec.EXACTLY) {
             height = heightSpec;
         } else {

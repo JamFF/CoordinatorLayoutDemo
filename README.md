@@ -147,6 +147,8 @@ firstapp:
 
 [CoordinatorLayout的使用如此简单](http://www.jianshu.com/p/72d45d1f7d55)
 
+[Android 自定义控件之第二讲：TypedArray 详解](http://blog.csdn.net/zjh_1110120/article/details/50986589)
+
 secondapp:
 
 [DesignSupportLibraryExamples](https://github.com/PareshMayani/DesignSupportLibraryExamples)
