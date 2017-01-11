@@ -8,5 +8,6 @@
         <attr name="text" format="string"/>
         <attr name="textColor" format="color"/>
         <attr name="textSize" format="dimension"/>
+        <attr name="textBackground" format="color"/>
     </declare-styleable>
 </resources>

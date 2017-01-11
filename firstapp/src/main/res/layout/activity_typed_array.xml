@@ -21,6 +21,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         app:text="1234"
+        app:textBackground="@android:color/holo_orange_light"
         app:textColor="@android:color/holo_red_light"
         app:textSize="@dimen/x_large_font"/>
 
