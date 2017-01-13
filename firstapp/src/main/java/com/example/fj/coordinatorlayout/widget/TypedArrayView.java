@@ -9,6 +9,7 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.View;
 
 import com.example.fj.coordinatorlayout.R;
 
@@ -18,28 +19,25 @@ import com.example.fj.coordinatorlayout.R;
  * 创建时间：2017/1/4 19:46
  */
 
-public class TypedArrayView extends android.view.View {
+public class TypedArrayView extends android.view.View implements View.OnClickListener {
 
     private static final String TAG = "TypedArrayView";
 
-    /**
-     * 文本
-     */
+    // 文本
     private String mText;
-    /**
-     * 文本的颜色，背景颜色
-     */
+
+    // 文本转换为数字
+    private int mTextInt;
+
+    // 文本的颜色，背景颜色
     private int mTextColor, mTextBackground;
-    /**
-     * 文本的大小
-     */
+
+    // 文本的大小
     private int mTextSize;
 
     private Paint mPaint;
 
-    /**
-     * 绘制时控制文本绘制的范围
-     */
+    // 绘制时控制文本绘制的范围
     private Rect mBound;
 
     // 代码创建TypedArrayView控件
@@ -70,8 +68,15 @@ public class TypedArrayView extends android.view.View {
             typedArray.recycle();
         }
 
+        try {
+            mTextInt = Integer.parseInt(mText);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
         mPaint = new Paint();
         mBound = new Rect();
+        setOnClickListener(this);
         Log.d(TAG, "TypedArrayView中text的length: " + mText.length());
     }
 
@@ -130,7 +135,6 @@ public class TypedArrayView extends android.view.View {
         Log.d(TAG, "getMeasuredWidth():" + getMeasuredWidth() + "   getMeasuredHeight():" + getMeasuredHeight());
         canvas.drawRect(0, 0, getMeasuredWidth(), getMeasuredHeight(), mPaint);
 
-
         // 文字大小
         mPaint.setTextSize(mTextSize);
         // 文字居中
@@ -141,5 +145,15 @@ public class TypedArrayView extends android.view.View {
         Log.d(TAG, "mBound.width():" + mBound.width() + "   mBound.height():" + mBound.height());
         // 由于文字Paint.Align.CENTER，使用getWidth() / 2，如果使用Paint.Align.LEFT，使用getWidth() / 2 - mBound.width() / 2
         canvas.drawText(mText, getWidth() / 2, getHeight() / 2 + mBound.height() / 2, mPaint);
+    }
+
+    @Override
+    public void onClick(View v) {
+        mTextInt++;
+        mText = String.valueOf(mTextInt);
+        // 重绘UI，调用onDraw方法，不会调用onMeasure方法
+        invalidate();
+        // 调用onMeasure和onDraw，频繁调用会卡顿
+        // requestLayout();
     }
 }
