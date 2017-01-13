@@ -122,7 +122,7 @@ CoordinatorLayout控件的使用
 
 * Status bar scrim：状态栏的背景，调用方法setStatusBarScrim(Drawable)。还没研究明白，不过这个只能在Android5.0以上系统有效果
 
-* Parallax scrolling children：CollapsingToolbarLayout滑动时，子视图的视觉差，可以通过属性app:layout_collapseParallaxMultiplier="0.6"改变
+* Parallax scrolling children：CollapsingToolbarLayout滑动时，子视图的视觉差，可以通过属性`app:layout_collapseParallaxMultiplier="0.6"`改变
 
 * CollapseMode ：子视图的折叠模式，有两种"pin"：固定模式，在折叠的时候最后固定在顶端；"parallax"：视差模式，在折叠的时候会有个视差折叠的效果，通常和`layout_collapseParallaxMultiplier`(设置视差因子)搭配使用
 
