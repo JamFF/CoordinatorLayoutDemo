@@ -74,7 +74,8 @@ public class TypedArrayView extends android.view.View implements View.OnClickLis
             e.printStackTrace();
         }
 
-        mPaint = new Paint();
+        // 构建Paint时直接加上去锯齿属性，也可以mPaint = new Paint();
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mBound = new Rect();
         setOnClickListener(this);
         Log.d(TAG, "TypedArrayView中text的length: " + mText.length());
