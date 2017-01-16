@@ -13,9 +13,11 @@
     app:subtitle="@string/tool_bar_sub_title"
     app:title="@string/app_bar"
     app:titleMarginStart="30dp"
+    tools:context="com.example.fj.second.AppBarLayoutActivity"
     tools:showIn="@layout/activity_app_bar_layout"/>
 
     <!--scroll: 所有想滚动出屏幕的view都需要设置这个flag，
     没有设置这个flag的view将被固定在屏幕顶部。
     例如，TabLayout 没有设置这个值，将会停留在屏幕顶部-->
     <!--enterAlways: 设置这个flag时，向下的滚动都会导致该view变为可见，启用快速“返回模式”-->
+    <!--tools:showIn="@layout/activity_app_bar_layout" 将这个布局include到activity_app_bar_layout-->

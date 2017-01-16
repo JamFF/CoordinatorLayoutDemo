@@ -8,6 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.fj.second.AppBarLayoutActivity">
     <!--android:fitsSystemWindows="true"时 toolbar 隐藏时 toolbar 会滑动到 StatusBar 下面-->
+    <!--tools:context="com.example.fj.second.AppBarLayoutActivity关联Activity使用相应的Theme"-->
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
