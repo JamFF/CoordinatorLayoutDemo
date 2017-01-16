@@ -110,7 +110,7 @@ CoordinatorLayout控件的使用
 > 
 > 那么你可以直接给 CardView 加上 `android:foreground="?attr/selectableItemBackground"` 这个属性会在 Lollipop 上自动加上 > Ripple 效果，在旧版本则是一个变深/变亮的效果。
 
-* 使用app:cardElevation增加CardView的海拔高度，需要引入命名空间
+* 使用`app:cardElevation`增加CardView的海拔高度，需要引入命名空间
 
 ##CollapsingToolbarLayout
 
