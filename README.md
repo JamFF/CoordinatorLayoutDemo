@@ -94,7 +94,7 @@ CoordinatorLayout控件的使用
 
 > 我们需要自定义一个 dimen 作为 CardView 的 Margin 值：
 
-> 1.创建 /res/value 和 /res/value-v21 资源文件夹于项目对应 Module 目录下，前者放置旧版本/通用的资源文件（了解的可以跳过），后者放置 21 及更高 SDK 版本的资源文件。
+> 1.创建 `/res/value` 和 `/res/value-v21` 资源文件夹于项目对应 Module 目录下，前者放置旧版本/通用的资源文件（了解的可以跳过），后者放置 21 及更高 SDK 版本的资源文件。
 > 
 > 2.在 value 内的 dimen.xml 创建一个 Dimension （<dimen> 属性），随便命个名（如 `xxx_card_margin`）并填入数值 0dp。
 > 
