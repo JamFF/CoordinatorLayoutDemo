@@ -118,9 +118,9 @@ CoordinatorLayout控件的使用
 
 * Collapsing title：ToolBar的标题，当CollapsingToolbarLayout全屏没有折叠时，title显示的是大字体，在折叠的过程中，title不断变小到一定大小的效果。你可以调用setTitle(CharSequence)方法设置title
 
-* Content scrim：ToolBar被折叠到顶部固定时候的背景，你可以调用setContentScrim(Drawable)方法改变背景或者 在属性中使用 `app:contentScrim="?attr/colorPrimary"`来改变背景
+* Content scrim：ToolBar被折叠到顶部固定时候的背景，你可以调用`setContentScrim(Drawable)`方法改变背景或者 在属性中使用 `app:contentScrim="?attr/colorPrimary"`来改变背景
 
-* Status bar scrim：状态栏的背景，调用方法setStatusBarScrim(Drawable)。还没研究明白，不过这个只能在Android5.0以上系统有效果
+* Status bar scrim：状态栏的背景，调用方法`setStatusBarScrim(Drawable)`。还没研究明白，不过这个只能在Android5.0以上系统有效果
 
 * Parallax scrolling children：CollapsingToolbarLayout滑动时，子视图的视觉差，可以通过属性`app:layout_collapseParallaxMultiplier="0.6"`改变
 
