@@ -35,6 +35,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // 当ViewHolder创建时的回调
         // View view = View.inflate(parent.getContext(), isLinearLayoutManager ? R.layout.fragment_item_linear : R.layout.fragment_item, null);
+        // 上面的方法最后调用的也是LayoutInflater的inflate方法
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(isLinearLayoutManager ? R.layout.fragment_item_recycler_linear : R.layout.fragment_item_recycler_grid, parent, false);
         return new ViewHolder(view);
