@@ -26,7 +26,7 @@ CoordinatorLayout控件的使用
 	    <!--不加app:layout_behavior="@string/appbar_scrolling_view_behavior"
 	    会导致RecyclerView在Toolbar下面，被TabLayout遮盖-->
 
-可以理解为在最外层CoordinatorLayout控件内，寻找带有`layout_behavior`属性的子控件，作为CoordinatorLayout.Behavior
+可以理解为在最外层CoordinatorLayout控件内，寻找带有`layout_behavior`属性的子控件，作为`CoordinatorLayout.Behavior`
 
 没有找到`layout_behavior`属性的子控件，CoordinatorLayout就成为普通的FrameLayout了
 
