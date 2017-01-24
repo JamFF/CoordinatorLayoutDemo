@@ -98,7 +98,7 @@ CoordinatorLayout控件的使用
 > 
 > 2.在 `value` 内的 `dimen.xml` 创建一个 `Dimension （<dimen> 属性）`，随便命个名（如 `xxx_card_margin`）并填入数值 0dp。
 > 
-> 3.接着在 value-v21 文件夹内的 dimen.xml 创建名字相同的 Dimension，并填入你期望的预留边距（一般和 CardElevation 阴影大小相同）
+> 3.接着在 value-v21 文件夹内的 dimen.xml 创建名字相同的 Dimension，并填入你期望的预留边距（一般和 `CardElevation` 阴影大小相同）
 > 
 > 4.最后，在你布局中的 CardView 中设置`android:layout_margin="@dimen/xxx_card_margin"`
 > 
