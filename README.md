@@ -116,7 +116,7 @@ CoordinatorLayout控件的使用
 
 ###注意点
 
-* Collapsing title：ToolBar的标题，当CollapsingToolbarLayout全屏没有折叠时，title显示的是大字体，在折叠的过程中，title不断变小到一定大小的效果。你可以调用`setTitle(CharSequence)`方法设置title
+* Collapsing title：ToolBar的标题，当`CollapsingToolbarLayout`全屏没有折叠时，title显示的是大字体，在折叠的过程中，title不断变小到一定大小的效果。你可以调用`setTitle(CharSequence)`方法设置title
 
 * Content scrim：ToolBar被折叠到顶部固定时候的背景，你可以调用`setContentScrim(Drawable)`方法改变背景或者 在属性中使用 `app:contentScrim="?attr/colorPrimary"`来改变背景
 
