@@ -7,7 +7,7 @@ CoordinatorLayout控件的使用
 
 发现TabLayout遮挡了下面的ViewPager，ViewPager没有在TabLayout下方，而在Toolbar的下面
 
-在ViewPager内添加`app:layout_behavior="@string/appbar_scrolling_view_behavior"`得到解决
+解决方式：在ViewPager内添加`app:layout_behavior="@string/appbar_scrolling_view_behavior"`得到解决
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<android.support.v4.view.ViewPager
