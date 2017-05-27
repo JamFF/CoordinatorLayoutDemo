@@ -37,4 +37,11 @@
         android:layout_below="@id/bt_collapsing"
         android:text="@string/behavior"
         android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/bt_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_behavior"
+        android:text="@string/gone_statusBar"/>
 </RelativeLayout>

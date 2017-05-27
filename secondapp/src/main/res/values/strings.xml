@@ -18,4 +18,6 @@
     <string name="action_staggered">瀑布流显示</string>
     <string name="desc">展示图片</string>
     <string name="undo">undo</string>
+    <string name="gone_statusBar">隐藏状态栏</string>
+    <string name="visible_statusBar">显示状态栏</string>
 </resources>

@@ -58,7 +58,7 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
                 String msg = null;
                 switch (item.getItemId()) {
 
-                    case android.R.id.home:
+                    case R.id.home:
                         // 这里是不会走的，如果要设置返回键
                         // toolbar.setNavigationOnClickListener，或者onOptionsItemSelected
                         msg = "返回_Toolbar";
@@ -150,7 +150,7 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
                 Toast.makeText(this, "瀑布流样式_MenuItem", Toast.LENGTH_SHORT).show();
                 return true;
 
-            case android.R.id.home:// Toolbar上返回键的点击事件，也可以单独设置
+            case R.id.home:// Toolbar上返回键的点击事件，也可以单独设置
                 Toast.makeText(this, "返回_MenuItem", Toast.LENGTH_SHORT).show();
                 onBackPressed();
                 return true;

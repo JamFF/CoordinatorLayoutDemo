@@ -10,6 +10,8 @@
         <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
         <item name="colorPrimaryDark">@android:color/darker_gray</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--控件按下时的颜色-->
+        <!--<item name="colorControlHighlight">@color/colorAccent</item>-->
     </style>
 
     <style name="AppTheme.NoActionBar">
