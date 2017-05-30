@@ -1,8 +1,13 @@
 package com.example.fj.second.fragment;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,7 +32,7 @@ import java.util.List;
  * 作者：傅健
  * 创建时间：2016/12/18 11:22
  */
-public class ItemFragment extends Fragment {
+public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
 
@@ -50,6 +55,21 @@ public class ItemFragment extends Fragment {
     private boolean mStaggered = false;
 
     private OnListFragmentInteractionListener mListener;
+
+    // 下拉刷新的控件
+    private SwipeRefreshLayout mRefreshLayout;
+
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 0:
+                    mRefreshLayout.setRefreshing(false);
+                    break;
+            }
+        }
+    };
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -94,8 +114,15 @@ public class ItemFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
         View list = view.findViewById(R.id.list);
-        // Set the adapter
+
+        if (view instanceof SwipeRefreshLayout) {
+            mRefreshLayout = (SwipeRefreshLayout) view;
+            mRefreshLayout.setOnRefreshListener(this);
+            mRefreshLayout.setColorSchemeColors(Color.BLUE, Color.GREEN, Color.BLACK);
+        }
+
         if (list instanceof RecyclerView) {
+            // Set RecyclerView adapter
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) list;
 
@@ -161,6 +188,17 @@ public class ItemFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onRefresh() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(5000);
+                mHandler.sendEmptyMessage(0);
+            }
+        }).start();
     }
 
     /**
