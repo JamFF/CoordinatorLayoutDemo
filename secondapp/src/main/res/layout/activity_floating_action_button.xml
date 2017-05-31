@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--使用CoordinatorLayout，当FloatingActionButton在底部，
+弹出Snackbar时可以调整FloatingActionButton的位置，保证其不被挡住-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
