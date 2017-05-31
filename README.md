@@ -163,3 +163,5 @@ secondapp:
 [玩转AppBarLayout，更酷炫的顶部栏](http://www.jianshu.com/p/d159f0176576)
 
 [Android M新控件之AppBarLayout，NavigationView，CoordinatorLayout，CollapsingToolbarLayout的使用](http://blog.csdn.net/feiduclear_up/article/details/46514791)
+
+[Android Design Support Library使用详解——TextInputLayout与TextInputEditText](http://blog.csdn.net/maosidiaoxian/article/details/52217057)

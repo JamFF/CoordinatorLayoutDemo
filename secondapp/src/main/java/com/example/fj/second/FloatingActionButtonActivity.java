@@ -2,8 +2,11 @@ package com.example.fj.second;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +19,9 @@ import com.example.fj.second.util.ColoredSnackbar;
  * 作者：傅健
  * 创建时间：2016/12/17 16:28
  */
-public class FloatingActionButtonActivity extends AppCompatActivity {
+public class FloatingActionButtonActivity extends AppCompatActivity implements TextWatcher {
+
+    private TextInputLayout til_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
 
         initToolbar();
         initFloatingActionButton();
+        initTextInputLayout();
     }
 
     private void initToolbar() {
@@ -113,10 +119,44 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
         });
     }
 
+    private void initTextInputLayout() {
+        til_name = (TextInputLayout) findViewById(R.id.til_name);
+        til_name.getEditText().addTextChangedListener(this);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_fab, menu);
         return true;
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        if (s.length() > 5) {
+            if (s.toString().startsWith("fujian")) {
+                til_name.setHint("帐号正确");
+                til_name.setErrorEnabled(false);
+                til_name.setHintEnabled(true);
+            } else {
+                til_name.setError("帐号错误");
+                til_name.setErrorEnabled(true);
+                til_name.setHintEnabled(false);
+            }
+        } else {
+            til_name.setHint(getString(R.string.input_name));
+            til_name.setErrorEnabled(false);
+            til_name.setHintEnabled(true);
+        }
     }
 }
