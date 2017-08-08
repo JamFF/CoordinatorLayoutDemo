@@ -46,7 +46,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         // 当ViewHolder和数据绑定时的回调
         holder.setData(mBeanList.get(position));
 
-        holder.mView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
@@ -64,14 +64,12 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
         public final ImageView ivIcon;
         public final TextView tvName;
         public DataBean mItem;
 
         public ViewHolder(View view) {
             super(view);
-            mView = view;
             ivIcon = (ImageView) view.findViewById(R.id.item_list_iv_icon);
             tvName = (TextView) view.findViewById(R.id.item_list_tv_name);
         }
