@@ -8,7 +8,7 @@ import android.view.View;
 
 /**
  * 描述：
- * 作者：sam.fu
+ * 作者：JamFF
  * 创建时间：2016/12/28 10:13
  */
 

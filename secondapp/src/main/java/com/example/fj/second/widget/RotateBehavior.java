@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * 描述：FloatingActionButton点击旋转90度
- * 作者：sam.fu
+ * 作者：JamFF
  * 创建时间：2016/12/19 14:29
  */
 

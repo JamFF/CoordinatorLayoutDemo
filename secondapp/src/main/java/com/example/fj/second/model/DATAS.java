@@ -4,7 +4,7 @@ import com.example.fj.second.R;
 
 /**
  * 描述：
- * 作者：sam.fu
+ * 作者：JamFF
  * 创建时间：2016/12/18 15:37
  */
 public class DATAS {

@@ -11,7 +11,7 @@ import com.example.fj.coordinatorlayout.widget.MyView;
 
 /**
  * 描述：
- * 作者：sam.fu
+ * 作者：JamFF
  * 创建时间：2016/11/30 0:10
  */
 

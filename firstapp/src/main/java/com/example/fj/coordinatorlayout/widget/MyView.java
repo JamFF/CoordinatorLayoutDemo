@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 /**
  * 描述：
- * 作者：sam.fu
+ * 作者：JamFF
  * 创建时间：2016/11/29 23:01
  */
 
