@@ -186,8 +186,8 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
     @Override
     public void onDetach() {
-        super.onDetach();
         mListener = null;
+        super.onDetach();
     }
 
     @Override
