@@ -93,7 +93,7 @@ CoordinatorLayout控件的使用
 
 * CardView使用失效：需要在CardView的标签中添加`layout_margin`，不然不能显示出来海拔效果，在CardView的外层使用`layout_margin`也不会显示
 
-![alt text](https://github.com/ffuujian/CoordinatorLayoutDemo/blob/master/art/cardview.png)
+![alt text](https://github.com/JamFF/CoordinatorLayoutDemo/tree/master/art/cardview.png)
 
 * 使用上面的修改，会在SDK低于21的手机上，出现浪费空间问题，参照[关于使用 CardView 开发过程中要注意的细节](http://www.open-open.com/lib/view/open1445759019585.html)进行修改
 
@@ -133,11 +133,11 @@ CoordinatorLayout控件的使用
 
 使用`app:layout_collapseMode="pin"`
 
-![alt text](https://github.com/ffuujian/CoordinatorLayoutDemo/blob/master/art/collapseMode.png)
+![alt text](https://github.com/JamFF/CoordinatorLayoutDemo/tree/master/art/collapseMode.png)
 
 不使用`app:layout_collapseMode="pin"`
 
-![alt text](https://github.com/ffuujian/CoordinatorLayoutDemo/blob/master/art/no_collapseMode.png)
+![alt text](https://github.com/JamFF/CoordinatorLayoutDemo/tree/master/art/no_collapseMode.png)
 
 * Toolbar的高度`layout_height`必须固定，不能`"wrap_content"`，否则Toolbar不会滑动，也没有折叠效果
 
