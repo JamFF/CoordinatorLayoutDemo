@@ -15,7 +15,7 @@ import com.example.fj.coordinatorlayout.R;
 
 /**
  * 描述：
- * 作者：傅健
+ * 作者：JamFF
  * 创建时间：2017/1/4 19:46
  */
 

@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 
 /**
  * 描述：
- * 作者：傅健
+ * 作者：JamFF
  * 创建时间：2016/12/28 17:43
  */
 

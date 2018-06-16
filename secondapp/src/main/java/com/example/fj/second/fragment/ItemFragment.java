@@ -29,7 +29,7 @@ import java.util.List;
  * 描述：RecyclerView的Fragment
  * <p>
  * 对应的Activity必须实现{@link OnListFragmentInteractionListener}这个接口
- * 作者：傅健
+ * 作者：JamFF
  * 创建时间：2016/12/18 11:22
  */
 public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
@@ -187,6 +187,7 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     @Override
     public void onDetach() {
         mListener = null;
+        mHandler.removeCallbacksAndMessages(null);
         super.onDetach();
     }
 

@@ -16,7 +16,7 @@ import com.example.fj.second.util.ColoredSnackbar;
 
 /**
  * 描述：FloatingActionButton和Toolbar
- * 作者：傅健
+ * 作者：JamFF
  * 创建时间：2016/12/17 16:28
  */
 public class FloatingActionButtonActivity extends AppCompatActivity implements TextWatcher {
