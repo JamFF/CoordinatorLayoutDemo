@@ -1,5 +1,6 @@
 package com.example.fj.second.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +32,9 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         isLinearLayoutManager = columnCount == 1;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // 当ViewHolder创建时的回调
         // View view = View.inflate(parent.getContext(), isLinearLayoutManager ? R.layout.fragment_item_linear : R.layout.fragment_item, null);
         // 上面的方法最后调用的也是LayoutInflater的inflate方法
