@@ -9,27 +9,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fj.second.R;
-import com.example.fj.second.fragment.ItemFragment.OnListFragmentInteractionListener;
+import com.example.fj.second.fragment.OnItemClickListener;
 import com.example.fj.second.model.DataBean;
 
 import java.util.List;
 
-public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
+public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> implements View.OnClickListener, View.OnLongClickListener {
 
     private final List<DataBean> mBeanList;
     private final boolean isLinearLayoutManager;
-    private final OnListFragmentInteractionListener mListener;
+    private OnItemClickListener mListener;
 
     /**
      * 构造方法
      *
      * @param columnCount 列数，通过列数不同加载不同布局
-     * @param listener    点击事件
      */
-    public MyItemRecyclerViewAdapter(List<DataBean> beanList, int columnCount, OnListFragmentInteractionListener listener) {
+    public MyItemRecyclerViewAdapter(List<DataBean> beanList, int columnCount) {
         mBeanList = beanList;
-        mListener = listener;
         isLinearLayoutManager = columnCount == 1;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
     }
 
     @NonNull
@@ -40,29 +42,63 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         // 上面的方法最后调用的也是LayoutInflater的inflate方法
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(isLinearLayoutManager ? R.layout.fragment_item_recycler_linear : R.layout.fragment_item_recycler_grid, parent, false);
+        // 这里设置点击事件性能更好
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         // 当ViewHolder和数据绑定时的回调
         holder.setData(mBeanList.get(position));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        // 这里添加点击事件消耗性能，使用下面的方式
+        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    mListener.onItemClick(holder.getAdapterPosition());
                 }
             }
         });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mListener.onItemLongClick(holder.getAdapterPosition());
+                return false;
+            }
+        });*/
+
+        holder.itemView.setTag(holder.getAdapterPosition());
     }
 
     @Override
     public int getItemCount() {
         return mBeanList.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (null != mListener) {
+            mListener.onItemClick((int) v.getTag());
+        }
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        if (null != mListener) {
+            mListener.onItemLongClick((int) v.getTag());
+        }
+        return false;
+    }
+
+    public void removeDate(int position) {
+        mBeanList.remove(position);
+        notifyItemRemoved(position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

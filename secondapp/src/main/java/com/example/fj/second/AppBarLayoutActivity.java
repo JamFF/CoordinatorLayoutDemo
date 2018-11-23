@@ -1,9 +1,11 @@
 package com.example.fj.second;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -12,7 +14,6 @@ import android.widget.Toast;
 
 import com.example.fj.second.adapter.MyPagerAdapter;
 import com.example.fj.second.fragment.ItemFragment;
-import com.example.fj.second.model.DataBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,8 +122,17 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
     }
 
     @Override
-    public void onListFragmentInteraction(DataBean item) {
-        Toast.makeText(this, item.getName(), Toast.LENGTH_SHORT).show();
+    public void showToast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showDialog(DialogInterface.OnClickListener listener) {
+        new AlertDialog.Builder(this)
+                .setTitle("确认删除")
+                .setNegativeButton("取消", null)
+                .setPositiveButton("确定", listener)
+                .show();
     }
 
     @Override

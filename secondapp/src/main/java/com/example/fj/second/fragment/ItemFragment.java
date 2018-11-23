@@ -1,11 +1,13 @@
 package com.example.fj.second.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
@@ -59,11 +61,11 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     // 下拉刷新的控件
     private SwipeRefreshLayout mRefreshLayout;
 
-    private Handler mHandler = new Handler(){
+    private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what){
+            switch (msg.what) {
                 case 0:
                     mRefreshLayout.setRefreshing(false);
                     break;
@@ -110,7 +112,7 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
         View list = view.findViewById(R.id.list);
@@ -126,7 +128,7 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) list;
 
-            List<DataBean> beanList = new ArrayList<>();
+            final List<DataBean> beanList = new ArrayList<>();
 
             if (mOrientation != LinearLayout.VERTICAL && mOrientation != LinearLayout.HORIZONTAL) {
                 mOrientation = LinearLayout.VERTICAL;
@@ -167,7 +169,30 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 }
             }
 
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(beanList, mColumnCount, mListener));
+            final MyItemRecyclerViewAdapter adapter = new MyItemRecyclerViewAdapter(beanList, mColumnCount);
+
+            adapter.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(int position) {
+                    if (mListener != null) {
+                        mListener.showToast(beanList.get(position).getName());
+                    }
+                }
+
+                @Override
+                public void onItemLongClick(final int position) {
+                    if (mListener != null) {
+                        mListener.showDialog(new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                adapter.removeDate(position);
+                            }
+                        });
+                    }
+                }
+            });
+
+            recyclerView.setAdapter(adapter);
         }
         return view;
     }
@@ -213,7 +238,9 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(DataBean item);
+
+        void showToast(String text);
+
+        void showDialog(DialogInterface.OnClickListener listener);
     }
 }
