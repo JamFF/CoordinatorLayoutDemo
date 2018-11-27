@@ -108,8 +108,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
         public ViewHolder(View view) {
             super(view);
-            ivIcon = (ImageView) view.findViewById(R.id.item_list_iv_icon);
-            tvName = (TextView) view.findViewById(R.id.item_list_tv_name);
+            ivIcon = view.findViewById(R.id.item_list_iv_icon);
+            tvName = view.findViewById(R.id.item_list_tv_name);
         }
 
         /**
@@ -121,6 +121,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             tvName.setText(item.getName());
         }
 
+        @NonNull
         @Override
         public String toString() {
             return super.toString() + " '" + tvName.getText() + "'";

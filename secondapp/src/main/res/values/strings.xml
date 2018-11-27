@@ -22,4 +22,6 @@
     <string name="visible_statusBar">显示状态栏</string>
     <string name="input_name">输入帐号</string>
     <string name="input_password">输入密码</string>
+    <string name="card_view">CardView</string>
+    <string name="notification">Notification</string>
 </resources>

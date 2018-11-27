@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cl_main"
     android:layout_width="match_parent"
@@ -12,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/fab"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/bt_appbar"
@@ -20,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bt_fab"
         android:text="@string/app_bar"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/bt_collapsing"
@@ -28,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bt_appbar"
         android:text="@string/collapsing"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/bt_behavior"
@@ -36,12 +35,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/bt_collapsing"
         android:text="@string/behavior"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_behavior"
+        android:text="@string/card_view"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_card_view"
+        android:text="@string/notification"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/bt_model"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bt_behavior"
-        android:text="@string/gone_statusBar"/>
+        android:layout_below="@id/btn_notification"
+        android:text="@string/gone_statusBar" />
 </RelativeLayout>

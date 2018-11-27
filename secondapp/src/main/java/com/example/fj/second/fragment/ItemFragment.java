@@ -10,6 +10,8 @@ import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -43,6 +45,8 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     private static final String ARG_REVERSE_LAYOUT = "reverse_layout";
 
     private static final String ARG_STAGGERED = "staggered";
+
+    private Context mContext;
 
     // 列数
     private int mColumnCount = 1;
@@ -169,6 +173,15 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 }
             }
 
+            // 还可以自定义动画
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+            // 可以自定义分割线
+            if (mContext != null) {
+                DividerItemDecoration divider = new DividerItemDecoration(mContext, mOrientation);
+                recyclerView.addItemDecoration(divider);
+            }
+
             final MyItemRecyclerViewAdapter adapter = new MyItemRecyclerViewAdapter(beanList, mColumnCount);
 
             adapter.setOnItemClickListener(new OnItemClickListener() {
@@ -201,6 +214,7 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mContext = context;
         if (context instanceof OnListFragmentInteractionListener) {
             mListener = (OnListFragmentInteractionListener) context;
         } else {
@@ -212,6 +226,7 @@ public class ItemFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     @Override
     public void onDetach() {
         mListener = null;
+        mContext = null;
         mHandler.removeCallbacksAndMessages(null);
         super.onDetach();
     }

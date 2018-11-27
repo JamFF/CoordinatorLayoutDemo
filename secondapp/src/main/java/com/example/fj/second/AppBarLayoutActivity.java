@@ -41,7 +41,7 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
 
     private void initToolbar() {
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
 
         // 设置toolbar，注意theme不能使用带有actionbar的样式，否则会报错
         setSupportActionBar(toolbar);
@@ -91,8 +91,8 @@ public class AppBarLayoutActivity extends AppCompatActivity implements ItemFragm
 
     private void initTabLayout() {
 
-        tab = (TabLayout) findViewById(R.id.tab);
-        viewpager = (ViewPager) findViewById(R.id.viewpager);
+        tab = findViewById(R.id.tab);
+        viewpager = findViewById(R.id.viewpager);
     }
 
     private void initData() {

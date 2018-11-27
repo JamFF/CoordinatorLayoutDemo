@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.fj.second">
+    package="com.example.fj.second">
 
     <application
         android:allowBackup="true"
@@ -10,21 +10,23 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".FloatingActionButtonActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AppBarLayoutActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CollapsingToolbarLayoutActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".MyBehaviorActivity"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MyBehaviorActivity" />
+        <activity android:name=".CardViewActivity" />
+        <activity android:name=".NotificationActivity" />
     </application>
 
 </manifest>

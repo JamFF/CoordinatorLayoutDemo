@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bt_collapsing).setOnClickListener(this);
         findViewById(R.id.bt_behavior).setOnClickListener(this);
         findViewById(R.id.bt_model).setOnClickListener(this);
+        findViewById(R.id.bt_card_view).setOnClickListener(this);
+        findViewById(R.id.btn_notification).setOnClickListener(this);
     }
 
     @Override
@@ -51,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     v.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
                     ((Button) v).setText(getString(R.string.visible_statusBar));
                 }
+                break;
+
+            case R.id.bt_card_view:
+                startActivity(new Intent(this, CardViewActivity.class));
+                break;
+
+            case R.id.btn_notification:
+                startActivity(new Intent(this, NotificationActivity.class));
                 break;
         }
     }
