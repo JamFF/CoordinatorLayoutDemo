@@ -14,7 +14,8 @@ import com.example.fj.second.model.DataBean;
 
 import java.util.List;
 
-public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> implements View.OnClickListener, View.OnLongClickListener {
+public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>
+        implements View.OnClickListener, View.OnLongClickListener {
 
     private final List<DataBean> mBeanList;
     private final boolean isLinearLayoutManager;
@@ -69,10 +70,11 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             @Override
             public boolean onLongClick(View v) {
                 mListener.onItemLongClick(holder.getAdapterPosition());
-                return false;
+                return true;// true消费该事件，不会触发单击事件，false会触发点击事件
             }
         });*/
 
+        // 这种是高性能的点击事件
         holder.itemView.setTag(holder.getAdapterPosition());
     }
 
@@ -93,7 +95,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         if (null != mListener) {
             mListener.onItemLongClick((int) v.getTag());
         }
-        return false;
+        return true;// true消费该事件，不会触发单击事件，false会触发点击事件
     }
 
     public void removeDate(int position) {
